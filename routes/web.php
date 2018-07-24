@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//homepage
+Route::get('/', 'PortalController@home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//User route
+Route::get('/user','UserController@index');
+
+Route::get('/user/login','UserController@login')->name('user.login');
+Route::get('/user/register','UserController@register')->name('user.register');
