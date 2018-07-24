@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Pingat extends Migration
+class Pencalonan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class Pingat extends Migration
      */
     public function up()
     {
-        schema::create('pingat', function (Blueprint $table){
+        Schema::create('pencalonan', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->timestamps();
+            $table->integer('calon_id');
+            $table->integer('sesi_id');            
+            $table->integer('user_id');            
+            $table->string('asas');
+            $table->string('ulasan');
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
