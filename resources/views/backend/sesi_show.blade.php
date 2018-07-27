@@ -20,3 +20,12 @@
     
 @endsection
 
+
+@push('css')
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+@endpush
+
+@push('js')
+  <!-- DataTables -->
+  <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+@endpush

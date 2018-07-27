@@ -4,26 +4,23 @@
 
     <!-- Page Content -->
       <br/>
-        <h1>Edit Sesi: {{ $sesi->name }}</h1></br>
+        <h1>Edit Pencalonan: {{ $calon->name }}</h1></br>
 
         @include('common.alert')
         @include('common.form_error')
 
         
 
-        <form method="POST" action="{{ route('sesi.update', $sesi->id) }}">
+        <form method="POST" action="{{ route('pencalonan.update', $calon->id) }}">
           <!-- cara lama                                                                    {{ method_field('PUT') }} -->
 
           @method('PUT')
-          @include('backend.sesi_form')
+          @include('backend.pencalonan_form')
          
           <div class="form-group row">
             <div class="col-sm-10">
               <button type="submit" class="btn btn-primary">Update</button>
               <a href="{{ url()->previous() }}" type="button" class="btn btn-default">Back</a>
-              <!-- sama macam 
-                 <a href="{{ route('sesi.index') }}">Back</a>
-              -->
             </div>
           </div>
         </form>

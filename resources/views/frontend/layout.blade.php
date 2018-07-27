@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Half Slider - Start Bootstrap Template</title>
+    <title>{{ config('app.name')}}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('frontend/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">Start Bootstrap</a>
+        <a class="navbar-brand" href="{{ route('home') }}">Laravel</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,6 +43,9 @@
             </li>
             @endguest
             @auth
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('user.dashboard') }}">Dashboard</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('user.logout') }}">Logout as {{ title_case(Auth::user()->name) }}</a>
             </li>

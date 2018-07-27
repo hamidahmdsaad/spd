@@ -25,5 +25,14 @@ Route::post('/user/register','UserController@registerPost')->name('user.register
 //Authenticated link
 Route::middleware(['auth'])->group(function(){
 	Route::get('/user','UserController@dashboard')->name('user.dashboard');
-	Route::resource('sesi', 'SesiController');
+	//Route::resource('sesi', 'SesiController'); kalau satu resource
+
+	Route::resource('sesi', 'SesiController')->middleware('role:admin');
+	Route::resource('pencalonan', 'PencalonanController');
+
+	/*
+	Route::resources([
+		'sesi' => 'SesiController',
+		'pencalonan' => 'PencalonanController',
+	]); */
 });
